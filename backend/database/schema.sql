@@ -1,24 +1,20 @@
 -- -----------------------------------------------------
 -- Database nam_nam
 -- -----------------------------------------------------
-CREATE DATABASE IF NOT EXISTS `nam_nam`;
+CREATE DATABASE IF NOT EXISTS `myBoxingTrainer`;
 
-USE `nam_nam`;
+USE `myBoxingTrainer`;
 
 -- -----------------------------------------------------
 -- Table `nam_nam`.`user`
 -- -----------------------------------------------------
 CREATE TABLE
-    IF NOT EXISTS `nam_nam`.`user` (
+    IF NOT EXISTS `myBoxingTrainer`.`user` (
         `id` INT NOT NULL AUTO_INCREMENT,
         `first_name` VARCHAR(50) NOT NULL,
         `last_name` VARCHAR(50) NOT NULL,
-        `pseudo` VARCHAR(50) NOT NULL,
         `email` VARCHAR(255) NOT NULL,
         `password` VARCHAR(255) NOT NULL,
-        `birth_date` DATE NOT NULL,
-        `profile_picture` VARCHAR(255) NULL,
-        `background_picture` VARCHAR(255) NULL,
         `role` VARCHAR(50) NOT NULL,
         PRIMARY KEY (`id`)
     ) ENGINE = InnoDB;
@@ -27,17 +23,12 @@ CREATE TABLE
 -- Table `nam_nam`.`recipe`
 -- -----------------------------------------------------
 CREATE TABLE
-    IF NOT EXISTS `nam_nam`.`recipe` (
+    IF NOT EXISTS `nam_nam`.`program` (
         `id` INT NOT NULL AUTO_INCREMENT,
         `title` VARCHAR(255) NOT NULL,
         `picture` VARCHAR(255) NULL,
-        `time` VARCHAR(50) NOT NULL,
-        `date` DATE NOT NULL,
-        `price` INT NOT NULL,
-        `difficulty` VARCHAR(50) NOT NULL,
-        `number_share` INT NOT NULL,
-        `user_id` INT NOT NULL,
-        PRIMARY KEY (`id`, `user_id`),
+        `duration` VARCHAR(50) NOT NULL,
+        PRIMARY KEY (`id`),
         INDEX `fk_recipe_has_user_idx` (`user_id` ASC),
         CONSTRAINT `fk_recipe_has_user` FOREIGN KEY (`user_id`) REFERENCES `nam_nam`.`user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
     ) ENGINE = InnoDB;
