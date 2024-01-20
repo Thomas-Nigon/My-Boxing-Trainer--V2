@@ -5,6 +5,7 @@ function TextToSpeech() {
   const [isPaused, setIsPaused] = useState(false);
   const [utterance, setUtterance] = useState(null);
   const text = "Jab, Jab, Cross, Crochet";
+
   useEffect(() => {
     const synth = window.speechSynthesis;
     const u = new SpeechSynthesisUtterance(text);
@@ -16,11 +17,9 @@ function TextToSpeech() {
 
   const handlePlay = () => {
     const synth = window.speechSynthesis;
-
     if (isPaused) {
       synth.resume();
     }
-
     synth.speak(utterance);
     setIsPaused(false);
   };
