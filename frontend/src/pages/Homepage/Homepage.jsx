@@ -32,6 +32,7 @@ function Homepage() {
   };
   return (
     <main className="home page">
+      <h1>This is my backup</h1>
       <h1 className="home__recipeDay__title">Recette du jour</h1>
       <section className="home__recipeDay">
         {recipe ? (
