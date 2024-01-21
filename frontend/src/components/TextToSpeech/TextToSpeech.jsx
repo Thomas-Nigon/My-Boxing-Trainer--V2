@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 function TextToSpeech() {
   const [isPaused, setIsPaused] = useState(false);
   const [utterance, setUtterance] = useState(null);
-  const text = "Jab, Jab, Cross, Crochet";
+  const text = "Bonsoir Antzoine !";
 
   useEffect(() => {
     const synth = window.speechSynthesis;
