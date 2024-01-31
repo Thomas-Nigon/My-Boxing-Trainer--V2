@@ -13,11 +13,11 @@
 
 .App {
   justify-content: center;
-  color: $mainFontColor;
+  color: $mainLightColor;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: $mainColor;
+  background-color: $mainDarkColor;
 }
 
 .hidden {

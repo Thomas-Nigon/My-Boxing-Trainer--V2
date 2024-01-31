@@ -1,18 +1,16 @@
 import "./Homepage.scss";
-import TextToSpeech from "../../components/TextToSpeech/TextToSpeech";
+/* import TextToSpeech from "../../components/TextToSpeech/TextToSpeech";
 import CountDown from "../../components/CountDown/CountDown";
+import CountdownV2 from "../../components/CountdownV2/CountdownV2"; */
+import CountdownV3 from "../../components/CountdownV3/CountdownV3";
+/* import TimerWithSounds from "../../components/test"; */
 
 function Homepage() {
   return (
     <main className="container">
-      <img
-        className="gif"
-        name="test"
-        src={`${import.meta.env.VITE_BACKEND_URL}/assets/gifs/jab.gif`}
-        alt="logo"
-      />
-      <TextToSpeech />
-      <CountDown />
+      {/*     <TextToSpeech /> */}
+      <CountdownV3 />
+      {/* <TimerWithSounds /> */}
     </main>
   );
 }
