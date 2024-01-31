@@ -1,0 +1,31 @@
+.clock {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock__time {
+  /* transform: rotate(90deg); */
+  font-size: 8rem;
+}
+.clock__button-return {
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  border-radius: 50px;
+  width: 80px;
+  height: 40px;
+}
+@media only screen and (orientation: portrait) {
+  .clock {
+    display: none;
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  .warning-msg {
+    display: none;
+  }
+}

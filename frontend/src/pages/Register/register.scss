@@ -1,0 +1,31 @@
+.formInscription__inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formInscription__label {
+  justify-content: center;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.register__header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.register__container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.register__button-return {
+  width: 100%;
+}
