@@ -1,0 +1,18 @@
+.rounds {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rounds__navContainer {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rounds__button-toWorkout {
+  width: 100%;
+  border-radius: 10px;
+  height: 40px;
+}

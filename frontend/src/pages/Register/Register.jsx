@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import "./register.scss";
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
@@ -14,7 +14,7 @@ function Register() {
   const onSubmit = (data) => {
     try {
       console.warn("data submited:", data);
-      /*  fetch(`${import.meta.env.VITE_BACKEND_URL}/api/adduser`, {
+      fetch(`${import.meta.env.VITE_BACKEND_URL}/api/adduser`, {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -32,8 +32,7 @@ function Register() {
               title: "Oops...",
               text: "Something went wrong!",
             })
-            
-      );  */
+      );
     } catch (error) {
       console.error(error);
     }

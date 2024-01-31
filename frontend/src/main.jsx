@@ -11,6 +11,7 @@ import Register from "./pages/Register/Register";
 import Rounds from "./pages/Rounds/Rounds";
 import Programs from "./pages/Programs/Programs";
 import Welcome from "./pages/Welcome/Welcome";
+import Workout from "./pages/Workout/workout";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       { path: "/programs", element: <Programs /> },
       { path: "/clock", element: <ClockPage /> },
       { path: "/home", element: <Home /> },
+      { path: "/workout", element: <Workout /> },
     ],
   },
 ]);
