@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       { path: "/programs", element: <Programs /> },
       { path: "/clock", element: <ClockPage /> },
       { path: "/home", element: <Home /> },
-      { path: "/workout", element: <Workout /> },
+      { path: "/workout/:id", element: <Workout /> },
     ],
   },
 ]);

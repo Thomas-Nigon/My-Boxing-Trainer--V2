@@ -23,11 +23,12 @@ CREATE TABLE
 -- Table `nam_nam`.`recipe`
 -- -----------------------------------------------------
 CREATE TABLE
-    IF NOT EXISTS `nam_nam`.`program` (
+    IF NOT EXISTS `myBoxingTrainer`.`program` (
         `id` INT NOT NULL AUTO_INCREMENT,
         `title` VARCHAR(255) NOT NULL,
         `picture` VARCHAR(255) NULL,
-        `duration` VARCHAR(50) NOT NULL,
+        `duration` INT NULL,
+        `totalRounds`INT NULL,
         PRIMARY KEY (`id`),
         INDEX `fk_recipe_has_user_idx` (`user_id` ASC),
         CONSTRAINT `fk_recipe_has_user` FOREIGN KEY (`user_id`) REFERENCES `nam_nam`.`user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION

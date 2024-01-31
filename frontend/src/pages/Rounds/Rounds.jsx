@@ -1,6 +1,8 @@
 import "./rounds.scss";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 import Title from "../../components/Title/Title";
+import { ProgramsContext } from "../../components/Contexts/ProgramContext";
 /*
 Creer un tableau ou fetch un tableau de rounds
  pour chaque programme on map le programme
@@ -8,36 +10,24 @@ Creer un tableau ou fetch un tableau de rounds
 */
 
 function Rounds() {
+  const { programs } = useContext(ProgramsContext);
   return (
     <main className="rounds">
       <Title />
       <h1>Chose you training</h1>
       <nav className="rounds__navContainer">
-        <Link className="rounds__button-toWorkout" to="/workout">
-          <button className="rounds__button-toWorkout" type="submit">
-            5x5 minutes
-          </button>
-        </Link>
-        <Link className="rounds__button-toWorkout" to="/workout">
-          <button className="rounds__button-toWorkout" type="submit">
-            5x3 minutes
-          </button>
-        </Link>
-        <Link className="rounds__button-toWorkout" to="/workout">
-          <button className="rounds__button-toWorkout" type="submit">
-            3x3 minutes
-          </button>
-        </Link>
-        <Link className="rounds__button-toWorkout" to="/workout">
-          <button className="rounds__button-toWorkout" type="submit">
-            CUSTOM 1
-          </button>
-        </Link>
-        <Link className="rounds__button-toWorkout" to="/workout">
-          <button className="rounds__button-toWorkout" type="submit">
-            CUSTOM 2
-          </button>
-        </Link>
+        {programs &&
+          programs.map((program) => (
+            <Link
+              key={program.id}
+              className="rounds__button-toWorkout"
+              to={`/workout/${program.id}`}
+            >
+              <button className="rounds__button-toWorkout" type="submit">
+                {program.name}
+              </button>
+            </Link>
+          ))}
       </nav>
 
       <Link className="rounds__button-toWorkout" to="/home">

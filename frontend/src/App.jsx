@@ -1,15 +1,18 @@
 import "./App.scss";
 import { Outlet } from "react-router-dom";
 
-import { NavBarProvider } from "./components/Contexts/navBarContext";
+import { TechniqueProvider } from "./components/Contexts/TechniqueContext";
+import { ProgramsProvider } from "./components/Contexts/ProgramContext";
 
 function App() {
   return (
-    <NavBarProvider>
-      <div className="App">
-        <Outlet />
-      </div>
-    </NavBarProvider>
+    <TechniqueProvider>
+      <ProgramsProvider>
+        <div className="App">
+          <Outlet />
+        </div>
+      </ProgramsProvider>
+    </TechniqueProvider>
   );
 }
 

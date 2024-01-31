@@ -1,16 +1,18 @@
 import "./CountdownV4.scss";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import useSound from "use-sound";
 import beepSound from "./boxingBellSingle.mp3";
 import tripleClickSound from "./tripleTick.mp3";
 import overBell from "./boxingBell.mp3";
 
-function CountdownV4() {
+function CountdownV4({ program }) {
+  const { name, restTime } = program;
+
   const start = 1;
-  const workTime = 180;
-  const restTime = 1;
-  const maxRound = 5;
+  const workTime = program.roundLength;
+  const maxRound = program.totalRound;
   const [seconds, setSeconds] = useState(workTime);
   const [isRunning, setIsRunning] = useState(false);
   const [pause, setPause] = useState(false);
@@ -97,6 +99,7 @@ function CountdownV4() {
 
   return (
     <main className="countdown__container">
+      <h1>Program: {name}</h1>
       <section className="countdown__button__container">
         {isRunning ? (
           <button type="submit" onClick={handlePause}>
@@ -117,15 +120,15 @@ function CountdownV4() {
       <h1 className="countdown__countdown">{formatTime(seconds)}</h1>
 
       {over ? (
-        <h1>It's over yey !!!!</h1>
+        <h2>It's over yey !!!!</h2>
       ) : (
         <article>
           {pause ? (
-            <div>rest Time {seconds}</div>
+            <p>rest Time {seconds}</p>
           ) : (
-            <h1 className="countdown__roundCount">
+            <p className="countdown__roundCount">
               Round : {round} / {maxRound}
-            </h1>
+            </p>
           )}
         </article>
       )}
@@ -135,5 +138,16 @@ function CountdownV4() {
     </main>
   );
 }
+CountdownV4.propTypes = {
+  program: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    length: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    restTime: PropTypes.number.isRequired,
+    roundLength: PropTypes.number.isRequired,
+    totalRound: PropTypes.number.isRequired,
+    userId: PropTypes.number.isRequired,
+  }).isRequired,
+};
 
 export default CountdownV4;

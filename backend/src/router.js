@@ -8,11 +8,15 @@ const router = express.Router();
 
 // Import itemControllers module for handling item-related operations
 const itemControllers = require("./controllers/itemControllers");
+const techniqueControllers = require("./controllers/techniqueControllers");
 const userControllers = require("./controllers/userControllers");
+const programControllers = require("./controllers/programControllers");
 const { hashPassword } = require("./middleware/hashPassword");
 const authControllers = require("./controllers/authControllers");
 
 router.get("/user", userControllers.browse);
+router.get("/techniques", techniqueControllers.browse);
+router.get("/programs", programControllers.browse);
 
 router.post("/adduser", hashPassword, userControllers.register);
 router.post("/login", authControllers.login);
