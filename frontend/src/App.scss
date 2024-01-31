@@ -7,17 +7,13 @@
   font-size: 17px;
 }
 
-.page {
-  margin-bottom: 6vh;
-}
-
 .App {
   justify-content: center;
   color: $mainLightColor;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: $mainDarkColor;
+  /*  background-color: $mainDarkColor; */
 }
 
 .hidden {
