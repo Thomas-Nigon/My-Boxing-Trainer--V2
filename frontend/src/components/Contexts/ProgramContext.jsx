@@ -42,28 +42,20 @@ export function ProgramsProvider({ children }) {
   ];
   const combo = [
     [
-      { id: 1, name: "Jab", src: "mypicture" },
-      { id: 2, name: "Jab", src: "mypicture" },
-      { id: 3, name: "Cross", src: "mypicture" },
+      { id: 1, name: "Jab", src: "/assets/gifs/jab.gif" },
+      { id: 2, name: "Jab", src: "/assets/gifs/jab.gif" },
+      { id: 3, name: "Cross", src: "/assets/gifs/cross.gif" },
     ],
     [
-      { id: 4, name: "jab", src: "mypicture" },
-      { id: 5, name: "Rear hook", src: "mypicture" },
-      { id: 6, name: "Lead hook", src: "mypicture" },
+      { id: 4, name: "jab", src: "/assets/gifs/jab.gif" },
+      { id: 5, name: "Rear hook", src: "/assets/gifs/rearHook.gif" },
+      { id: 6, name: "Lead hook", src: "/assets/gifs/leadHook.gif" },
     ],
     [
-      { id: 7, name: "jab", src: "mypicture" },
-      { id: 8, name: "kick", src: "mypicture" },
-      { id: 9, name: "Lead Hook", src: "mypicture" },
+      { id: 7, name: "jab", src: "/assets/gifs/jab.gif" },
+      { id: 8, name: "kick", src: "/assets/gifs/kick.gif" },
+      { id: 9, name: "Lead Hook", src: "/assets/gifs/leadHook.gif" },
     ],
-    /*     { id: 2, seq: "Jab, cross" },
-    { id: 3, seq: "Jab, Cross, hook" },
-    { id: 4, seq: "cross" },
-    { id: 5, seq: "cross, hook" },
-    { id: 6, seq: "cross, hook, cross" },
-    { id: 7, seq: "Jab" },
-    { id: 8, seq: "Jab, hook" },
-    { id: 19, seq: "Jab; hook, hook" }, */
   ];
 
   const stateButton = useMemo(

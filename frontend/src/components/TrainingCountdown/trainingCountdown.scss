@@ -24,3 +24,51 @@
 .countdown__roundCount {
   font-size: 2rem;
 }
+.gifContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 90vw;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+}
+
+.instructionContainer {
+  display: flex;
+  flex-direction: row;
+  width: 90vw;
+  justify-content: space-between;
+  font-size: 2rem;
+}
+
+.trainingCountdown__instruction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2.7rem;
+}
+.info {
+  all: unset;
+  width: 10vw;
+}
+.gifButton {
+  all: unset;
+  background-color: black;
+  position: absolute;
+  top: 10%;
+  width: 100vw;
+  overflow: scroll;
+}
+.gifImg {
+  margin-bottom: 10vh;
+  width: 100%;
+}
+.popup {
+  background-color: black;
+}
+.instructionTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+}

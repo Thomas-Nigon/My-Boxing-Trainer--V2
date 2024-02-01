@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import "./trainingCountdown.scss";
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
@@ -13,10 +14,11 @@ function TrainingCountdown({ program }) {
   const { combo } = useContext(ProgramsContext);
 
   const start = 1;
-  /* const workTime = program.roundLength;
+  /*   const workTime = program.roundLength;
   const maxRound = program.totalRound; */
-  const workTime = 10;
+  const workTime = 20;
   const maxRound = 3;
+  const [show, setShow] = useState(false);
   const [comboId, setComboId] = useState(0);
   const [seconds, setSeconds] = useState(workTime);
   const [isRunning, setIsRunning] = useState(false);
@@ -76,7 +78,7 @@ function TrainingCountdown({ program }) {
       interval = setInterval(() => {
         setSeconds(seconds - 1);
       }, 1000);
-    } else if (round === 5) {
+    } else if (round === maxRound) {
       setIsOver(true);
       playOver();
       return () => clearInterval(interval);
@@ -107,13 +109,53 @@ function TrainingCountdown({ program }) {
 
   return (
     <>
+      <button type="submit" onClick={() => setShow(!show)}>
+        Instructions
+      </button>
       <header>
-        <h1>
-          {combo[comboId].map((comboss) => (
-            <p key={comboss.id}>{comboss.name}</p>
-          ))}
-        </h1>
+        {combo[comboId].map((comboss) => (
+          <div key={comboss.id} className="instructionContainer">
+            <p className="trainingCountdown__instruction" key={comboss.id}>
+              {comboss.name}
+            </p>
+          </div>
+        ))}
       </header>
+
+      {show && (
+        <button
+          className="gifButton"
+          type="submit"
+          onClick={() => setShow(!show)}
+        >
+          <div className="popup">
+            <p className="instructionTitle">{combo[comboId][0].name}</p>
+            <img
+              className="gifImg"
+              src={`${import.meta.env.VITE_BACKEND_URL}${
+                combo[comboId][0].src
+              }`}
+              alt="A BOXING GIF"
+            />
+            <p className="instructionTitle">{combo[comboId][1].name}</p>
+            <img
+              className="gifImg"
+              src={`${import.meta.env.VITE_BACKEND_URL}${
+                combo[comboId][1].src
+              }`}
+              alt="A BOXING GIF"
+            />
+            <p className="instructionTitle">{combo[comboId][2].name}</p>
+            <img
+              className="gifImg"
+              src={`${import.meta.env.VITE_BACKEND_URL}${
+                combo[comboId][2].src
+              }`}
+              alt="A BOXING GIF"
+            />
+          </div>
+        </button>
+      )}
       <main className="countdown__container">
         <h1>Program: {name}</h1>
         <section className="countdown__button__container">
