@@ -1,0 +1,15 @@
+a {
+  all: unset;
+}
+.programCard {
+  background-color: beige;
+  height: 30vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.programCard__pic {
+  width: 90%;
+}

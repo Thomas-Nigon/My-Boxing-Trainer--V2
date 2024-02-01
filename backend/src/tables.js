@@ -8,8 +8,10 @@ const ProgramManager = require("./models/ProgramManager");
 const TechniqueManager = require("./models/TechniquesManager");
 const UserManager = require("./models/UserManager");
 const programListManager = require("./models/ProgramManager");
+const ComboManager = require("./models/ComboManager");
 
 const managers = [
+  ComboManager,
   ItemManager,
   ProgramManager,
   programListManager,
