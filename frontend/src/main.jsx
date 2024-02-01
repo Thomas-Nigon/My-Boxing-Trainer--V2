@@ -9,9 +9,10 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Rounds from "./pages/Rounds/Rounds";
-import Programs from "./pages/Programs/Programs";
 import Welcome from "./pages/Welcome/Welcome";
 import Workout from "./pages/Workout/workout";
+import Trainings from "./pages/Trainings/Trainings";
+import TrainingSession from "./pages/TrainingSession/TrainingSession";
 
 const router = createBrowserRouter([
   {
@@ -27,10 +28,11 @@ const router = createBrowserRouter([
       },
       { path: "/login", element: <Login /> },
       { path: "/rounds", element: <Rounds /> },
-      { path: "/programs", element: <Programs /> },
+      { path: "/trainings", element: <Trainings /> },
       { path: "/clock", element: <ClockPage /> },
       { path: "/home", element: <Home /> },
       { path: "/workout/:id", element: <Workout /> },
+      { path: "/training/:id", element: <TrainingSession /> },
     ],
   },
 ]);

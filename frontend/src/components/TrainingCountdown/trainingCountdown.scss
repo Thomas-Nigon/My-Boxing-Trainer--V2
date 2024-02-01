@@ -1,0 +1,26 @@
+.test {
+  display: none;
+}
+
+.countdown__container {
+  border: 2px solid red;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 50%;
+}
+.countdown__button__container {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+}
+.countdown__countdown {
+  font-size: 4rem;
+}
+
+.countdown__roundCount {
+  font-size: 2rem;
+}

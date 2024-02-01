@@ -12,14 +12,14 @@ function Home() {
             Rounds
           </button>
         </Link>
-        <Link to="/programs">
+        <Link to="/trainings">
           <button className="home__NavButtons" type="submit">
-            programs
+            Trainings
           </button>
         </Link>
         <Link to="/clock">
           <button className="home__NavButtons" type="submit">
-            clock
+            Clock
           </button>
         </Link>
       </nav>
