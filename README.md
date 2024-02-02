@@ -1,4 +1,26 @@
-<<<<<<< HEAD
+              MY BOXING TRAINER
+
+
+- En tant que boxeur, je souhaite une appli pour organiser mes séances d'entrainement.
+- User connecté:
+- En tant qu'utilisateur, je dois pouvoir me connecter pour gérer mes préférences.
+- En tant qu'utilisateur, je peux naviguer sur l'appli et sélectionner un programme de sport.
+        - Les programmes de sports sont composés de Rounds de boxe: 3 ou 5 minutes.
+        - Chaque minute un enchainement est annoncé, l'utilisateur doit reproduire le/les mouvements jusqu'à annonce de la suite.
+- En tant qu'utilisateur, je peux choisir un entrainement libre à durée prédéfinies. (5x5, 5x3, 3x5, 3x3 minutes)
+- En tant qu'utilisateur, j'ai accès à deux timers ajustables selon mes envies.
+- En tant qu'utilisateur, j'ai la possibilité d'afficher l'horloge en plein écran sans que ça éteigne l'écran.
+
+-User non connecté:
+- En tant que user lorsque j'arrive sur la home page, j'ai la possible de me log/ m'inscrire ou visiter le site.
+- En tant que user non connecté je peux voir les pages de l'appli.
+
+-User Admin:
+- En tant qu'admin, j'ai la possibilité d'ajouter, supprimer, modifier un programme.
+- En tant qu'admin, j'ai la possibilité de supprimer un utilisateur.
+
+
+
 ## Concept
 
 This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
