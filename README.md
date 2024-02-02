@@ -5,6 +5,7 @@
 - User connecté:
 - En tant qu'utilisateur, je dois pouvoir me connecter pour gérer mes préférences.
 - En tant qu'utilisateur, je peux naviguer sur l'appli et sélectionner un programme de sport.
+
         - Les programmes de sports sont composés de Rounds de boxe: 3 ou 5 minutes.
         - Chaque minute un enchainement est annoncé, l'utilisateur doit reproduire le/les mouvements jusqu'à annonce de la suite.
 - En tant qu'utilisateur, je peux choisir un entrainement libre à durée prédéfinies. (5x5, 5x3, 3x5, 3x3 minutes)
@@ -19,7 +20,7 @@
 - En tant qu'admin, j'ai la possibilité d'ajouter, supprimer, modifier un programme.
 - En tant qu'admin, j'ai la possibilité de supprimer un utilisateur.
 
-
+<img width="1373" alt="Capture d’écran 2024-02-02 à 16 21 10" src="https://github.com/Thomas-Nigon/My-Boxing-Trainer--V2/assets/111352407/bfc9e18f-b792-45c9-a66a-3f3adf9535a7">
 
 ## Concept
 
