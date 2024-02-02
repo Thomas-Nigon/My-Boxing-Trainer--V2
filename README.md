@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Concept
 
 This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
@@ -77,3 +78,7 @@ Don't use any public folder on your frontend. This folder won't be accessible on
 
 If you want to access the logs of your online projet (to follow the deployement or to watch any bug error), connect to your VPS (`ssh user@host`).
 Then, go on your specific project and run  `docker compose logs -t -f`.
+=======
+# My-Boxing-Trainer--V2
+My Boxing Trainer - V2
+>>>>>>> origin/main
