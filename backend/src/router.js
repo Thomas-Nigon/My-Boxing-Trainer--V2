@@ -23,6 +23,7 @@ router.get("/programs", programControllers.browse);
 
 router.post("/adduser", hashPassword, userControllers.register);
 router.post("/login", authControllers.login);
+router.put("/edit/:id", programControllers.edit);
 
 router.get("/items/:id", itemControllers.read);
 router.get("/items", itemControllers.browse);

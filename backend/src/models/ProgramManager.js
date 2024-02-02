@@ -41,6 +41,22 @@ class ProgramManager extends AbstractManager {
     return rows;
   }
 
+  async update(name, totalRound, roundLength, restTime, programId) {
+    // Execute the SQL SELECT query to retrieve a specific item by its ID
+    const [rows] = await this.database.query(
+      `UPDATE ${this.table} SET
+       name = ?,
+       totalRound = ?,
+       roundLength = ?,
+       restTime = ?
+       WHERE id = ?`,
+      [name, totalRound, roundLength, restTime, programId]
+    );
+
+    // Return the first row of the result, which represents the item
+    return rows[0];
+  }
+
   // The U of CRUD - Update operation
   // TODO: Implement the update operation to modify an existing item
 

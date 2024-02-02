@@ -15,6 +15,17 @@ class UserManager extends AbstractManager {
       `INSERT INTO ${this.table} (first_name, last_name, email, password, role) VALUES (?,?,?,?,?)`,
       [myUser.firstname, myUser.lastname, myUser.email, hashedPassword, "user"]
     );
+    await this.database.query(
+      `INSERT INTO myBoxingTrainer.program (name, length, totalRound, roundLength, restTime, userId)
+      VALUE (?, ?, ?, ?, ?, ?,?)`,
+      ["CUSTOM 1", "0 ", 0, 0, 0, result.insertId, 0]
+    );
+    await this.database.query(
+      `INSERT INTO myBoxingTrainer.program (name, length, totalRound, roundLength, restTime, userId)
+      VALUE (?, ?, ?, ?, ?, ?, ?)`,
+      ["CUSTOM 2", "0 ", 0, 0, 0, result.insertId, 0]
+    );
+
     // Return the ID of the newly inserted item
     return result.insertId;
   }

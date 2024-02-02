@@ -23,7 +23,9 @@ function Trainings() {
           ))}
       </section>
       <Link to="/home">
-        <button type="submit">return</button>
+        <button className="return" type="submit">
+          return
+        </button>
       </Link>
     </main>
   );

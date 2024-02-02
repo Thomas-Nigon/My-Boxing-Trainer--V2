@@ -99,18 +99,18 @@ function CountdownV4({ program }) {
 
   return (
     <main className="countdown__container">
-      <h1>Program: {name}</h1>
+      <h1>{name}</h1>
       <section className="countdown__button__container">
         {isRunning ? (
-          <button type="submit" onClick={handlePause}>
+          <button className="redBorder" type="submit" onClick={handlePause}>
             Pause
           </button>
         ) : (
           <section className="countdown__button__container">
-            <button type="submit" onClick={handleStart}>
+            <button className="redBorder" type="submit" onClick={handleStart}>
               Start
             </button>
-            <button type="submit" onClick={handleReset}>
+            <button className="redBorder" type="submit" onClick={handleReset}>
               restart
             </button>
           </section>
@@ -133,7 +133,9 @@ function CountdownV4({ program }) {
         </article>
       )}
       <Link to="/home">
-        <button type="submit">return</button>
+        <button className="return" type="submit">
+          return
+        </button>
       </Link>
     </main>
   );

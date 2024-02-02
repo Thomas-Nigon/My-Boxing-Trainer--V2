@@ -17,8 +17,8 @@ const router = require("./router");
 app.use(
   cors({
     origin: [
-      process.env.FRONTEND_URL, // keep this one, after checking the value in `backend/.env`
-      "http://localhost:3310/",
+      process.env.FRONTEND_URL,
+      "http://localhost/3310", // keep this one, after checking the value in `backend/.env`
     ],
   })
 );

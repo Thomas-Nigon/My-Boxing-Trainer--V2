@@ -13,6 +13,7 @@ import Welcome from "./pages/Welcome/Welcome";
 import Workout from "./pages/Workout/workout";
 import Trainings from "./pages/Trainings/Trainings";
 import TrainingSession from "./pages/TrainingSession/TrainingSession";
+import EditCustoms from "./pages/EditCustoms/EditCustoms";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
       { path: "/home", element: <Home /> },
       { path: "/workout/:id", element: <Workout /> },
       { path: "/training/:id", element: <TrainingSession /> },
+      { path: "/edit/:id", element: <EditCustoms /> },
     ],
   },
 ]);

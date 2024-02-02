@@ -24,7 +24,9 @@ function Home() {
         </Link>
       </nav>
       <Link to="/">
-        <button type="submit">return</button>
+        <button className="return" type="submit">
+          Return
+        </button>
       </Link>
     </div>
   );

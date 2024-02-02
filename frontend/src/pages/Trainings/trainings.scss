@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .program {
   display: flex;
   flex-direction: column;
@@ -13,4 +15,14 @@
 }
 .Link {
   color: Black;
+}
+.return {
+  margin-top: 5vh;
+  border-radius: 10px;
+  width: 20vw;
+  height: 40px;
+  border-radius: 5px;
+  background-color: $mainDarkColor;
+  color: $mainLightColor;
+  border: 2px solid red;
 }

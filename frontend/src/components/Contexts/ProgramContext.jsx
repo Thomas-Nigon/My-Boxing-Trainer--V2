@@ -5,6 +5,7 @@ export const ProgramsContext = createContext();
 
 export function ProgramsProvider({ children }) {
   const [programs, setPrograms] = useState("");
+  const [update, setUpdate] = useState(false);
 
   const trainings = [
     {
@@ -34,7 +35,7 @@ export function ProgramsProvider({ children }) {
     {
       id: 4,
       name: "random",
-      src: "/assets/images/random.png",
+      src: "/assets/images/lowKick.png",
       totalRound: 3,
       restTime: 60,
       roundLength: 180,
@@ -64,8 +65,10 @@ export function ProgramsProvider({ children }) {
       setPrograms,
       trainings,
       combo,
+      update,
+      setUpdate,
     }),
-    [programs, setPrograms, trainings, combo]
+    [programs, setPrograms, trainings, combo, update, setUpdate]
   );
 
   useEffect(() => {
@@ -73,7 +76,7 @@ export function ProgramsProvider({ children }) {
       .then((response) => response.json())
       .then((data) => setPrograms(data))
       .catch((error) => console.error(error));
-  }, []);
+  }, [update]);
 
   return (
     <ProgramsContext.Provider value={stateButton}>

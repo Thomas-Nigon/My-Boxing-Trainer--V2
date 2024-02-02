@@ -1,10 +1,18 @@
+@import "../../variables.scss";
+
 .rounds {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.rounds__tile {
+  font-size: 2rem;
+  font-family: "Anton", sans-serif;
+}
 .rounds__navContainer {
+  margin-top: 3vh;
+  gap: 15px;
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -12,7 +20,63 @@
   align-items: center;
 }
 .rounds__button-toWorkout {
+  all: unset;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   border-radius: 10px;
   height: 40px;
+  background-color: $mainDarkColor;
+  color: $mainLightColor;
+  border: 1px solid red;
+}
+.rounds__button-return {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3vh;
+  width: 25vw;
+  border-radius: 10px;
+  height: 40px;
+  background-color: $mainDarkColor;
+  color: $mainLightColor;
+  border: 1px solid red;
+}
+.rounds__button-toCustom {
+  background-color: aqua;
+}
+.editPic {
+  width: 50%;
+}
+
+.customContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+.editContainer {
+  gap: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+.editLink {
+  //width: 100%;
+  background-color: $mainDarkColor;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  border-radius: 10px;
+}
+.toProgram {
+  width: 100%;
 }

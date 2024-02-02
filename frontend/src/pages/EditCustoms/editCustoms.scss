@@ -1,19 +1,18 @@
 @import "../../variables.scss";
 
-.formLogin__inputs {
-  gap: 10px;
+/* .formInscription__inputs {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.formLogin__label {
+.formInscription__label {
   justify-content: center;
   width: 60%;
   display: flex;
   flex-direction: column;
 }
-.login__header {
+.register__header {
   position: absolute;
   top: 0;
   width: 100%;
@@ -22,25 +21,45 @@
   justify-content: space-around;
   align-items: center;
 }
-.login__container {
+.register__container {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.register__button-return {
+  width: 100%;
+}
+ */
+
+.edit__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.login__button-return {
-  width: 20vw;
-  border-radius: 5px;
-  background-color: $mainDarkColor;
-  color: $mainLightColor;
-  border: 2px solid red;
-  margin-top: 5vh;
+.editForm {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-.formLogin__inputs__submit {
+
+.editForm__inputs__submit {
   width: 20vw;
   border-radius: 5px;
   background-color: $mainDarkColor;
   color: $mainLightColor;
   border: 2px solid red;
+}
+
+.buttonContainer {
+  margin-top: 3vh;
+  width: 80%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }

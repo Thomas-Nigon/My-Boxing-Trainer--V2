@@ -3,6 +3,7 @@ import "./register.scss";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import Title from "../../components/Title/Title";
 
 function Register() {
   const {
@@ -39,88 +40,86 @@ function Register() {
   };
 
   return (
-    <main className="register__container">
-      <header className="register__header">
-        <h1 className="register__header-title">BOXING</h1>
-        <img src="src/assets/images/gloves.png" alt="boxing gloves" />
-        <h1 className="register__header-title">TRAINER</h1>
-      </header>
-      <form
-        className="formInscription__inputs"
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <label className="formInscription__label">
-          Votre prénom
-          <input
-            className="formInscription__inputs__text"
-            type="text"
-            {...register("firstname", {
-              required: "Votre prénom est obligatoire",
-            })}
-            placeholder=" Prénom"
-          />
-          {errors.firstname && (
-            <p style={{ color: "red" }}>Le champ Prénom est obligatoire</p>
-          )}
-        </label>
-
-        <label className="formInscription__label">
-          Votre nom
-          <input
-            className="formInscription__inputs__text"
-            {...register("lastname", { required: true })}
-            type="text"
-            placeholder=" Nom"
-          />
-          {errors.lastname && (
-            <p style={{ color: "red" }}>Le champ Nom est obligatoire</p>
-          )}
-        </label>
-        <label className="formInscription__label">
-          Votre email
-          <input
-            className="formInscription__inputs__text"
-            type="email"
-            {...register(
-              "email",
-              {
-                required: true,
-                pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-              },
-              { type: "email" }
+    <>
+      <Title />
+      <main className="register">
+        <form
+          className="formInscription__inputs"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <label className="formInscription__label">
+            Votre prénom
+            <input
+              className="formInscription__inputs__text"
+              type="text"
+              {...register("firstname", {
+                required: "Votre prénom est obligatoire",
+              })}
+              placeholder=" Prénom"
+            />
+            {errors.firstname && (
+              <p style={{ color: "red" }}>Le champ Prénom est obligatoire</p>
             )}
-            placeholder=" azerty@gmail.com"
-          />
-          {errors.email && (
-            <p style={{ color: "red" }}>
-              Le champ Email est obligatoire et valide
-            </p>
-          )}
-        </label>
-        <label className="formInscription__label">
-          Mot de passe
-          <input
-            className="formInscription__inputs__text"
-            {...register("password", { required: true, minLength: 8 })}
-            type="password"
-            placeholder=" Mot de passe"
-          />
-          {errors.password && (
-            <p style={{ color: "red" }}>
-              Votre mot de passe doit faire plus de 8 caractères
-            </p>
-          )}
-        </label>
-        <button className="formInscription__inputs__submit" type="submit">
-          Inscription
-        </button>
-      </form>
-      <Link to="/">
-        <button className="register__button-return" type="submit">
-          return
-        </button>
-      </Link>
-    </main>
+          </label>
+
+          <label className="formInscription__label">
+            Votre nom
+            <input
+              className="formInscription__inputs__text"
+              {...register("lastname", { required: true })}
+              type="text"
+              placeholder=" Nom"
+            />
+            {errors.lastname && (
+              <p style={{ color: "red" }}>Le champ Nom est obligatoire</p>
+            )}
+          </label>
+          <label className="formInscription__label">
+            Votre email
+            <input
+              className="formInscription__inputs__text"
+              type="email"
+              {...register(
+                "email",
+                {
+                  required: true,
+                  pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+                },
+                { type: "email" }
+              )}
+              placeholder=" azerty@gmail.com"
+            />
+            {errors.email && (
+              <p style={{ color: "red" }}>
+                Le champ Email est obligatoire et valide
+              </p>
+            )}
+          </label>
+          <label className="formInscription__label">
+            Mot de passe
+            <input
+              className="formInscription__inputs__text"
+              {...register("password", { required: true, minLength: 8 })}
+              type="password"
+              placeholder=" Mot de passe"
+            />
+            {errors.password && (
+              <p style={{ color: "red" }}>
+                Votre mot de passe doit faire plus de 8 caractères
+              </p>
+            )}
+          </label>
+          <button className="registratioForm__inputs__submit" type="submit">
+            Inscription
+          </button>
+        </form>
+        <Link to="/">
+          <button className="registratioForm__inputs__return" type="submit">
+            return
+          </button>
+        </Link>
+      </main>
+    </>
   );
 }
 

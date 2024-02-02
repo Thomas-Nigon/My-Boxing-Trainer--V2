@@ -1,11 +1,13 @@
+@import "../../variables.scss";
+
 .test {
   display: none;
 }
 
 .countdown__container {
   border: 2px solid red;
-  width: 350px;
-  height: 350px;
+  width: 80vw;
+  height: 80vw;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -18,9 +20,23 @@
   justify-content: space-around;
 }
 .countdown__countdown {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .countdown__roundCount {
   font-size: 2rem;
+}
+
+.return {
+  background-color: $mainDarkColor;
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
+.redBorder {
+  padding: 5px;
+  background-color: $mainDarkColor;
+  color: $mainLightColor;
+  border: 1px solid red;
+  border-radius: 5px;
 }

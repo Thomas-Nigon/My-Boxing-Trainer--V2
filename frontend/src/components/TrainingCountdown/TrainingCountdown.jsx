@@ -109,7 +109,11 @@ function TrainingCountdown({ program }) {
 
   return (
     <>
-      <button type="submit" onClick={() => setShow(!show)}>
+      <button
+        className="countdownButton"
+        type="submit"
+        onClick={() => setShow(!show)}
+      >
         Instructions
       </button>
       <header>
@@ -160,16 +164,28 @@ function TrainingCountdown({ program }) {
         <h1>Program: {name}</h1>
         <section className="countdown__button__container">
           {isRunning ? (
-            <button type="submit" onClick={handlePause}>
+            <button
+              className="countdownButton"
+              type="submit"
+              onClick={handlePause}
+            >
               Pause
             </button>
           ) : (
             <section className="countdown__button__container">
-              <button type="submit" onClick={handleStart}>
+              <button
+                className="countdownButton"
+                type="submit"
+                onClick={handleStart}
+              >
                 Start
               </button>
-              <button type="submit" onClick={handleReset}>
-                restart
+              <button
+                className="countdownButton"
+                type="submit"
+                onClick={handleReset}
+              >
+                Restart
               </button>
             </section>
           )}
@@ -182,7 +198,7 @@ function TrainingCountdown({ program }) {
         ) : (
           <article>
             {pause ? (
-              <p>rest Time {seconds}</p>
+              <p>Rest Time {seconds}</p>
             ) : (
               <p className="countdown__roundCount">
                 Round : {round} / {maxRound}
@@ -191,7 +207,9 @@ function TrainingCountdown({ program }) {
           </article>
         )}
         <Link to="/home">
-          <button type="submit">return</button>
+          <button className="return" type="submit">
+            Return
+          </button>
         </Link>
       </main>
     </>
