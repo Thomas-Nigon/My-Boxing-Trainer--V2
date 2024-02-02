@@ -21,6 +21,7 @@
 - En tant qu'admin, j'ai la possibilité de supprimer un utilisateur.
 
 <img width="1373" alt="Capture d’écran 2024-02-02 à 16 21 10" src="https://github.com/Thomas-Nigon/My-Boxing-Trainer--V2/assets/111352407/bfc9e18f-b792-45c9-a66a-3f3adf9535a7">
+<img width="1373" alt="Capture d’écran 2024-02-02 à 17 08 02" src="https://github.com/Thomas-Nigon/My-Boxing-Trainer--V2/assets/111352407/49dfd0d1-a163-4003-a800-7b74d3ba7dd9">
 
 ## Concept
 
