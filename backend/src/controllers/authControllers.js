@@ -1,4 +1,5 @@
 const argon2 = require("argon2");
+const jwt = require("jsonwebtoken");
 
 const tables = require("../tables");
 
@@ -14,11 +15,33 @@ const login = async (req, res, next) => {
     if (verified) {
       // Respond with the user and a signed token in JSON format (but without the hashed password)
       delete user.hashed_password;
+      const accessToken = jwt.sign(
+        { sub: user.id, isAdmin: user.isAdmin },
+        process.env.ACCESS_TOKEN_SECRET,
+        {
+          expiresIn: "30s",
+        }
+      );
+      const refreshToken = jwt.sign(
+        { sub: user.id, isAdmin: user.isAdmin },
+        process.env.REFRESH_TOKEN_SECRET,
+        {
+          expiresIn: "1h",
+        }
+      );
+      res.cookie("jwt", refreshToken, {
+        httpOnly: true,
+        maxAge: 60 * 60 * 1000,
+        secure: true,
+        sameSite: "none",
+      });
+
       res.json({
         email: user.email,
         id: user.id,
         pseudo: user.pseudo,
         role: user.role,
+        accessToken,
       });
     } else {
       res.sendStatus(422);

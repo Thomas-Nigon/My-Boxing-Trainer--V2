@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
-
+const cookieParser = require("cookie-parser");
 // Import the API routes from the router module
 const router = require("./router");
 
@@ -20,6 +20,9 @@ app.use(
       process.env.FRONTEND_URL,
       "http://localhost/3310", // keep this one, after checking the value in `backend/.env`
     ],
+    methods: ["GET", "POST", "DELETE", "PUT"], // Allow only specified methods
+    allowedHeaders: ["Content-Type"], // Allow only specified headers
+    credentials: true,
   })
 );
 
@@ -82,8 +85,7 @@ express.json();
 
 // Then, require the module and use it as middleware in your Express application:
 
-// const cookieParser = require("cookie-parser");
-// app.use(cookieParser());
+app.use(cookieParser());
 
 // Once `cookie-parser` is set up, you can read and set cookies in your routes.
 // For example, to set a cookie named "username" with the value "john":

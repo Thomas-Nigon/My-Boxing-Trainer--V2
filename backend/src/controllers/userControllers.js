@@ -14,12 +14,11 @@ const browse = async (req, res, next) => {
 };
 
 const register = async (req, res, next) => {
-  const myUser = req.body.data;
-  const { hashedPassword } = req.body;
+  const { user, email, hashedPassword } = req.body;
 
   try {
-    const user = await tables.user.create(myUser, hashedPassword);
-    res.json(user);
+    const registredUser = await tables.user.create(user, email, hashedPassword);
+    res.json(registredUser);
   } catch (err) {
     next(err);
   }
