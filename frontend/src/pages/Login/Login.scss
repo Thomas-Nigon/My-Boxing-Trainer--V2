@@ -1,5 +1,7 @@
 @import "../../variables.scss";
 
+/*
+
 .formLogin__inputs {
   gap: 10px;
   width: 100%;
@@ -43,4 +45,134 @@
   background-color: $mainDarkColor;
   color: $mainLightColor;
   border: 2px solid red;
+}
+ */
+
+@import "../../variables.scss";
+
+/* .formInscription__inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formInscription__label {
+  justify-content: center;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.registratioForm__inputs__return {
+  margin-top: 5vh;
+  width: 30vw;
+  height: 3vh;
+  border-radius: 5px;
+  background-color: $mainDarkColor;
+  color: $mainLightColor;
+  border: 2px solid red;
+}
+.registratioForm__inputs__submit {
+  margin-top: 2vh;
+  width: 30vw;
+  height: 3vh;
+  border-radius: 5px;
+  background-color: $mainDarkColor;
+  color: $mainLightColor;
+  border: 2px solid red;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+} */
+
+section {
+  width: 100%;
+  max-width: 420px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  padding-bottom: 1rem;
+}
+
+a,
+a:visited {
+  color: #fff;
+}
+
+input[type="text"],
+input[type="password"],
+button,
+textarea {
+  font-family: "Nunito", sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+label,
+button {
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.5rem;
+}
+
+.instructions {
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  background: #000;
+  color: #fff;
+  padding: 0.25rem;
+  position: relative;
+  bottom: -10px;
+}
+
+.instructions > svg {
+  margin-right: 0.25rem;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.hide {
+  display: none;
+}
+
+.valid {
+  color: limegreen;
+  margin-left: 0.25rem;
+}
+
+.invalid {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.line {
+  display: inline-block;
 }

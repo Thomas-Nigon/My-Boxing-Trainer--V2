@@ -282,9 +282,7 @@ function Register() {
           <p>
             Already registered?
             <br />
-            <span className="line">
-              <p>Sign In</p>
-            </span>
+            <span className="line">Sign In</span>
           </p>
         </main>
       )}
