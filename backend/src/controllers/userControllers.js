@@ -13,8 +13,28 @@ const browse = async (req, res, next) => {
   }
 };
 
+const readByEmail = async (req, res, next) => {
+  // console.log("read by email reqbody ===>", req.body);
+  try {
+    const user = await tables.user.readByEmail();
+    res.json(user);
+  } catch (error) {
+    next();
+  }
+};
+
+const readById = async (req, res, next) => {
+  // console.log("read by ID reqbody ===>", req.idUser);
+  try {
+    const user = await tables.user.read(req.idUser);
+    res.json(user);
+  } catch (error) {
+    next();
+  }
+};
+
 const register = async (req, res, next) => {
-  const { user, email, hashedPassword } = req.body;
+  const { user, email, hashedPassword } = req.idUser;
 
   try {
     const registredUser = await tables.user.create(user, email, hashedPassword);
@@ -26,5 +46,7 @@ const register = async (req, res, next) => {
 
 module.exports = {
   browse,
+  readByEmail,
+  readById,
   register,
 };

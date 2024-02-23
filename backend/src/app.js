@@ -18,10 +18,11 @@ app.use(
   cors({
     origin: [
       process.env.FRONTEND_URL,
-      "http://localhost/3310", // keep this one, after checking the value in `backend/.env`
+      "http://localhost/3310",
+      "http://localhost/3000", // keep this one, after checking the value in `backend/.env`
     ],
     methods: ["GET", "POST", "DELETE", "PUT"], // Allow only specified methods
-    allowedHeaders: ["Content-Type"], // Allow only specified headers
+    allowedHeaders: ["Content-Type, Authorization"], // Allow only specified headers
     credentials: true,
   })
 );

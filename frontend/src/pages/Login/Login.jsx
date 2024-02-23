@@ -1,13 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import "./Login.scss";
 import { useRef, useState, useEffect, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Title from "../../components/Title/Title";
 import { UserContext } from "../../components/Contexts/userContext";
 import axios from "../../api/axios";
 
 function Login() {
-  const navigate = useNavigate();
   const { setAuth } = useContext(UserContext);
   const emailRef = useRef();
   const errRef = useRef();
@@ -45,7 +44,6 @@ function Login() {
       setEmail("");
       setPwd("");
       setSuccess(true);
-      navigate("/home");
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -67,7 +65,11 @@ function Login() {
         <section>
           <h1>You are logged in!</h1>
           <br />
-          <p>Go to Home</p>
+          <Link to="/home">
+            <button className="login__button-return" type="submit">
+              LogIn
+            </button>
+          </Link>
         </section>
       ) : (
         <main className="login__container">

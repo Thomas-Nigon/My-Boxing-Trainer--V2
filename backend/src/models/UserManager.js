@@ -43,6 +43,18 @@ class UserManager extends AbstractManager {
     return rows[0];
   }
 
+  async readByEmail(email) {
+    // Execute the SQL SELECT query to retrieve a specific item by its ID
+    const [rows] = await this.database.query(
+      `SELECT * FROM ${this.table} WHERE email = ?`,
+      [email]
+      // console.log(rows[0])
+    );
+
+    // Return the first row of the result, which represents the item
+    return rows[0];
+  }
+
   async readAll() {
     // Execute the SQL SELECT query to retrieve all items from the "item" table
     const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);

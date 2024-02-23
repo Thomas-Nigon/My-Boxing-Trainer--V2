@@ -21,20 +21,20 @@ const login = async (req, res, next) => {
         { sub: user.id, isAdmin: user.isAdmin },
         process.env.ACCESS_TOKEN_SECRET,
         {
-          expiresIn: "30s",
+          expiresIn: "1h",
         }
       );
       // console.log("acces Token in authController ==>", accessToken);
-      const refreshToken = jwt.sign(
+      /*     const refreshToken = jwt.sign(
         { sub: user.id, isAdmin: user.isAdmin },
         process.env.REFRESH_TOKEN_SECRET,
         {
-          expiresIn: "30s",
+          expiresIn: "1h",
         }
-      );
-      res.cookie("jwt", refreshToken, {
+      ); */
+      res.cookie("jwt", accessToken, {
         httpOnly: true,
-        maxAge: 30 * 1000,
+        maxAge: 60 * 60 * 1000,
         secure: true,
         sameSite: "none",
       });
