@@ -54,6 +54,15 @@ const login = async (req, res, next) => {
     next(err);
   }
 };
+const logout = async ({ res }) => {
+  try {
+    await res.clearCookie("jwt").sendStatus(200);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 module.exports = {
   login,
+  logout,
 };

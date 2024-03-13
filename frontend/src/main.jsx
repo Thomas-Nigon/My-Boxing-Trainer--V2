@@ -14,6 +14,7 @@ import Workout from "./pages/Workout/workout";
 import Trainings from "./pages/Trainings/Trainings";
 import TrainingSession from "./pages/TrainingSession/TrainingSession";
 import EditCustoms from "./pages/EditCustoms/EditCustoms";
+import UserPage from "./pages/UserPage/UserPage";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
       { path: "/workout/:id", element: <Workout /> },
       { path: "/training/:id", element: <TrainingSession /> },
       { path: "/edit/:id", element: <EditCustoms /> },
+      { path: "/userPage", element: <UserPage /> },
     ],
   },
 ]);

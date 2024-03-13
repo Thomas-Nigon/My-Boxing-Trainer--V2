@@ -25,6 +25,7 @@ router.get("/programs", programControllers.browse);
 router.post("/register", hashPassword, userControllers.register);
 router.post("/login", authControllers.login);
 router.put("/edit/:id", programControllers.edit);
+router.get("/logout", authControllers.logout);
 
 /* ************************************************************************* */
 
