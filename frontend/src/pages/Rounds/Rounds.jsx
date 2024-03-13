@@ -1,9 +1,9 @@
 import "./rounds.scss";
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import { UserContext } from "../../components/Contexts/userContext";
+import { UserContext } from "../../Contexts/userContext";
 import Title from "../../components/Title/Title";
-import { ProgramsContext } from "../../components/Contexts/ProgramContext";
+import { ProgramsContext } from "../../Contexts/ProgramContext";
 
 function Rounds() {
   const { auth } = useContext(UserContext);

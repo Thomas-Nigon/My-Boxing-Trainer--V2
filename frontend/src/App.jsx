@@ -1,9 +1,9 @@
 import "./App.scss";
 import { Outlet } from "react-router-dom";
 
-import { TechniqueProvider } from "./components/Contexts/TechniqueContext";
-import { ProgramsProvider } from "./components/Contexts/ProgramContext";
-import { UserProvider } from "./components/Contexts/userContext";
+import { TechniqueProvider } from "./Contexts/TechniqueContext";
+import { ProgramsProvider } from "./Contexts/ProgramContext";
+import { UserProvider } from "./Contexts/userContext";
 
 function App() {
   return (

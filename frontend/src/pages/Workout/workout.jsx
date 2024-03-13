@@ -2,7 +2,7 @@ import "./workout.scss";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import CountdownV4 from "../../components/CountdownV4/CountdownV4";
-import { ProgramsContext } from "../../components/Contexts/ProgramContext";
+import { ProgramsContext } from "../../Contexts/ProgramContext";
 import Title from "../../components/Title/Title";
 
 function Workout() {

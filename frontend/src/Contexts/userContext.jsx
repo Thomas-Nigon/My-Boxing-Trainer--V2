@@ -1,6 +1,6 @@
 import { createContext, useState, useMemo, useEffect } from "react";
 import PropTypes from "prop-types";
-import axios from "../../api/axios";
+import axios from "../api/axios";
 
 export const UserContext = createContext();
 

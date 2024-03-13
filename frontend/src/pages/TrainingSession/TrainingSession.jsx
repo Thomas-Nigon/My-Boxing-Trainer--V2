@@ -2,7 +2,7 @@ import "./trainingSession.scss";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import TrainingCountdown from "../../components/TrainingCountdown/TrainingCountdown";
-import { ProgramsContext } from "../../components/Contexts/ProgramContext";
+import { ProgramsContext } from "../../Contexts/ProgramContext";
 import Title from "../../components/Title/Title";
 
 function TrainingSession() {

@@ -2,7 +2,7 @@ import "./home.scss";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import Title from "../../components/Title/Title";
-import { UserContext } from "../../components/Contexts/userContext";
+import { UserContext } from "../../Contexts/userContext";
 
 function Home() {
   const { auth } = useContext(UserContext);
