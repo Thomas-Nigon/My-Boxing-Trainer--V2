@@ -1,97 +1,125 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import "./Login.scss";
-import { Link, useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { useForm } from "react-hook-form";
-import Swal from "sweetalert2";
+import { useRef, useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import Title from "../../components/Title/Title";
 import { UserContext } from "../../components/Contexts/userContext";
+import axios from "../../api/axios";
 
 function Login() {
   const { setAuth } = useContext(UserContext);
-  const { register, handleSubmit } = useForm();
-  const navigate = useNavigate();
-  const onSubmit = (data) => {
-    try {
-      fetch(`${import.meta.env.VITE_BACKEND_URL}/api/login`, {
-        method: "post",
-        //  credentials: "include",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          data,
-        }),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            Swal.fire({
-              icon: "error",
-              title: "Oops...",
-              text: "Identifiant ou mot de passe incorrects",
-            });
-          }
-          return response.json();
-        })
-        .then(
-          (response) =>
-            setAuth({
-              mail: response.email,
-              id: response.id,
-              pseudo: response.pseudo,
-              isLogged: true,
-            }),
-          navigate("/home")
-        );
+  const emailRef = useRef();
+  const errRef = useRef();
 
-      /*     (fetchedData) => console.log(fetcheData) */
-      /*  setAuth({
-            mail: fetchedData.email,
-            id: fetchedData.id,
-            pseudo: fetchedData.pseudo,
-            isLogged: true,
-          }), */
-      //  );
-    } catch (error) {
-      console.error("error:", error);
+  const [email, setEmail] = useState("");
+  const [password, setPwd] = useState("");
+  const [errMsg, setErrMsg] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    emailRef.current.focus();
+  }, []);
+
+  useEffect(() => {
+    setErrMsg("");
+  }, [email, password]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/login`,
+        JSON.stringify({ email, password }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
+      );
+      const accessToken = response?.data?.accessToken;
+      const role = response?.data?.role;
+      console.info("accessToken ==>:", accessToken);
+      console.info("role ==>:", role);
+      setAuth({ email, password, role, accessToken });
+      setEmail("");
+      setPwd("");
+      setSuccess(true);
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("No Server Response");
+      } else if (err.response?.status === 400) {
+        setErrMsg("Missing Username or Password");
+      } else if (err.response?.status === 401) {
+        setErrMsg("Unauthorized");
+      } else {
+        setErrMsg("Login Failed");
+      }
+      errRef.current.focus();
     }
   };
 
   return (
     <>
       <Title />
-      <div className="login__container">
-        <form className="formLogin__inputs" onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="mail" className="formLogin__label">
-            Email address
+      {success ? (
+        <section className="login__success">
+          <h1>You are logged in!</h1>
+          <br />
+          <Link to="/home">
+            <button className="login__button-return" type="submit">
+              LogIn
+            </button>
+          </Link>
+        </section>
+      ) : (
+        <main className="login__container">
+          <p
+            ref={errRef}
+            className={errMsg ? "errmsg" : "offscreen"}
+            aria-live="assertive"
+          >
+            {errMsg}
+          </p>
+          <h1>Sign In:</h1>
+          <form className="login__form" onSubmit={handleSubmit}>
+            <label htmlFor="userEmail">Email:</label>
             <input
-              id="mail"
-              className="formLogin__inputs__text"
               type="email"
-              {...register("mail", { required: true }, { type: "email" })}
-              placeholder="azerty@gmail.com"
+              id="userEmail"
+              ref={emailRef}
+              autoComplete="off"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              required
             />
-          </label>
-          <label htmlFor="password" className="formLogin__label">
-            Password
+
+            <label htmlFor="password">Password:</label>
             <input
-              id="password"
-              className="formLogin__inputs__text"
-              {...register("password", { required: true })}
               type="password"
-              placeholder="Password"
+              id="password"
+              onChange={(e) => setPwd(e.target.value)}
+              value={password}
+              required
             />
-          </label>
-          <input
-            className="formLogin__inputs__submit"
-            type="submit"
-            value="Connexion"
-          />
-        </form>
-        <Link to="/">
-          <button className="login__button-return" type="submit">
-            return
-          </button>
-        </Link>
-      </div>
+            <button className="formButton" type="submit">
+              Sign In
+            </button>
+          </form>
+          <p>
+            Need an Account?
+            <br />
+            <Link className="login__link" to="/register">
+              Sign Up
+            </Link>
+          </p>
+
+          <Link to="/">
+            <button className="navButtons" type="submit">
+              Return
+            </button>
+          </Link>
+        </main>
+      )}
     </>
   );
 }

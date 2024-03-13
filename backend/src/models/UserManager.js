@@ -9,19 +9,19 @@ class UserManager extends AbstractManager {
 
   // The C of CRUD - Create operation
 
-  async create(myUser, hashedPassword) {
-    // Execute the SQL INSERT query to add a new item to the "item" table
+  async create(user, email, hashedPassword) {
+    // Execute the SQL INSERT query to add a new user to the "user" table
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (first_name, last_name, email, password, role) VALUES (?,?,?,?,?)`,
-      [myUser.firstname, myUser.lastname, myUser.email, hashedPassword, "user"]
+      `INSERT INTO ${this.table} (username, email, password, role) VALUES (?,?,?,?)`,
+      [user, email, hashedPassword, "user"]
     );
     await this.database.query(
-      `INSERT INTO myBoxingTrainer.program (name, length, totalRound, roundLength, restTime, userId)
-      VALUE (?, ?, ?, ?, ?, ?,?)`,
+      `INSERT INTO myBoxingTrainer.program (name, length, totalRound, roundLength, restTime, userId, common)
+      VALUE (?, ?, ?, ?, ?, ?, ?)`,
       ["CUSTOM 1", "0 ", 0, 0, 0, result.insertId, 0]
     );
     await this.database.query(
-      `INSERT INTO myBoxingTrainer.program (name, length, totalRound, roundLength, restTime, userId)
+      `INSERT INTO myBoxingTrainer.program (name, length, totalRound, roundLength, restTime, userId, common)
       VALUE (?, ?, ?, ?, ?, ?, ?)`,
       ["CUSTOM 2", "0 ", 0, 0, 0, result.insertId, 0]
     );
@@ -37,6 +37,18 @@ class UserManager extends AbstractManager {
     const [rows] = await this.database.query(
       `SELECT * FROM ${this.table} WHERE id = ?`,
       [id]
+    );
+
+    // Return the first row of the result, which represents the item
+    return rows[0];
+  }
+
+  async readByEmail(email) {
+    // Execute the SQL SELECT query to retrieve a specific item by its ID
+    const [rows] = await this.database.query(
+      `SELECT * FROM ${this.table} WHERE email = ?`,
+      [email]
+      // console.log(rows[0])
     );
 
     // Return the first row of the result, which represents the item

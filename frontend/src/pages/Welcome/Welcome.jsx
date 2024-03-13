@@ -7,7 +7,11 @@ function Welcome() {
     <div className="welcome">
       <Title />
       <main className="welcome__main">
-        <img src="src/assets/images/bgImg.png" alt="" />
+        <img
+          className="welcome__background"
+          src="src/assets/images/bgImg.png"
+          alt=""
+        />
         <nav className="welcome__NavButtons-container">
           <Link to="/login">
             <button className="welcome__NavButtons" type="submit">

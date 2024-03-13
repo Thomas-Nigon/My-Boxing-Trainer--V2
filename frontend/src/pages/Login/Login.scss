@@ -1,46 +1,86 @@
 @import "../../variables.scss";
 
-.formLogin__inputs {
-  gap: 10px;
+.login__success {
   width: 100%;
+  max-width: 420px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  background-color: lime;
 }
-.formLogin__label {
-  justify-content: center;
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-}
-.login__header {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 10vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+
 .login__container {
-  height: 100vh;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  h1 {
+    font-size: 2rem;
+  }
 }
-.login__button-return {
-  width: 20vw;
-  border-radius: 5px;
-  background-color: $mainDarkColor;
-  color: $mainLightColor;
-  border: 2px solid red;
-  margin-top: 5vh;
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  padding-bottom: 1rem;
 }
-.formLogin__inputs__submit {
-  width: 20vw;
-  border-radius: 5px;
-  background-color: $mainDarkColor;
-  color: $mainLightColor;
-  border: 2px solid red;
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+  font-size: 20px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+.instructions {
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  background: #000;
+  color: #fff;
+  padding: 0.25rem;
+  position: relative;
+  bottom: -10px;
+}
+
+.instructions > svg {
+  margin-right: 0.25rem;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.hide {
+  display: none;
+}
+
+.valid {
+  color: limegreen;
+  margin-left: 0.25rem;
+}
+
+.invalid {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.line {
+  display: inline-block;
+}
+.login__link {
+  color: $tertiaryColor;
 }

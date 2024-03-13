@@ -10,6 +10,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@radix-ui/react-dialog": "^1.0.5",
     "argon2": "^0.31.2",
+    "axios": "^1.6.7",
     "jsonwebtoken": "^9.0.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -21,7 +22,7 @@
     "react-simple-star-rating": "^5.1.7",
     "sass": "^1.69.5",
     "scss": "^0.2.4",
-    "sweetalert2": "^11.10.4",
+    "sweetalert2": "^11.6.13",
     "swiper": "^8.4.7",
     "use-sound": "^4.0.1"
   },
