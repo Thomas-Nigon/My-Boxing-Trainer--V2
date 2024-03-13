@@ -67,7 +67,7 @@ function Login() {
           <br />
           <Link to="/home">
             <button className="login__button-return" type="submit">
-              LogIn
+              Return to homepage
             </button>
           </Link>
         </section>
