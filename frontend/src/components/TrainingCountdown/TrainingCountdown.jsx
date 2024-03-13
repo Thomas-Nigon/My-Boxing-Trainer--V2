@@ -7,7 +7,7 @@ import useSound from "use-sound";
 import beepSound from "./boxingBellSingle.mp3";
 import tripleClickSound from "./tripleTick.mp3";
 import overBell from "./boxingBell.mp3";
-import { ProgramsContext } from "../Contexts/ProgramContext";
+import { ProgramsContext } from "../../Contexts/ProgramContext";
 
 function TrainingCountdown({ program }) {
   const { name /* , restTime */ } = program;

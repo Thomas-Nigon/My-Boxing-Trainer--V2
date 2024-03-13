@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import Title from "../../components/Title/Title";
-import { UserContext } from "../../components/Contexts/userContext";
-import { ProgramsContext } from "../../components/Contexts/ProgramContext";
+import { UserContext } from "../../Contexts/userContext";
+import { ProgramsContext } from "../../Contexts/ProgramContext";
 
 function EditCustoms() {
   const navigate = useNavigate();

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import TrainingCard from "../../components/TrainingCard/TrainingCard";
 import Title from "../../components/Title/Title";
-import { ProgramsContext } from "../../components/Contexts/ProgramContext";
+import { ProgramsContext } from "../../Contexts/ProgramContext";
 
 function Trainings() {
   const { trainings } = useContext(ProgramsContext);
