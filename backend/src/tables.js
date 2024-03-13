@@ -3,7 +3,6 @@
 /* ************************************************************************* */
 
 // Import the manager modules responsible for handling data operations on the tables
-const ItemManager = require("./models/ItemManager");
 const ProgramManager = require("./models/ProgramManager");
 const TechniqueManager = require("./models/TechniquesManager");
 const UserManager = require("./models/UserManager");
@@ -12,7 +11,6 @@ const ComboManager = require("./models/ComboManager");
 
 const managers = [
   ComboManager,
-  ItemManager,
   ProgramManager,
   programListManager,
   TechniqueManager,
