@@ -6,12 +6,19 @@ import { UserContext } from "../../Contexts/userContext";
 
 function Home() {
   const { auth } = useContext(UserContext);
+
   return (
     <div className="home">
       <Title />
-      <section>
-        <h1> hello {auth.pseudo}</h1>
-      </section>
+      {auth.isLogged ? (
+        <section className="home__userInfo">
+          <h1> Hello {auth.pseudo} !</h1>
+          <Link to="/userPage">my profile</Link>
+        </section>
+      ) : (
+        ""
+      )}
+
       <nav className="home__NavButtons-container">
         <Link to="/rounds">
           <button className="navButtons" type="submit">
