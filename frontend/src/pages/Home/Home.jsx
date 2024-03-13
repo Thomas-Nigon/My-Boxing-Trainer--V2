@@ -14,17 +14,17 @@ function Home() {
       </section>
       <nav className="home__NavButtons-container">
         <Link to="/rounds">
-          <button className="home__NavButtons" type="submit">
+          <button className="navButtons" type="submit">
             Rounds
           </button>
         </Link>
         <Link to="/trainings">
-          <button className="home__NavButtons" type="submit">
+          <button className="navButtons" type="submit">
             Trainings
           </button>
         </Link>
         <Link to="/clock">
-          <button className="home__NavButtons" type="submit">
+          <button className="navButtons" type="submit">
             Clock
           </button>
         </Link>

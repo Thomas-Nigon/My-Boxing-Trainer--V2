@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import "./register.scss";
 import { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   faCheck,
   faTimes,
@@ -110,12 +111,12 @@ function Register() {
     <>
       <Title />
       {success ? (
-        <section>
+        <section className="register__success">
           <h1>Registration success !</h1>
           <p>click here to logIn</p>
         </section>
       ) : (
-        <main className="register">
+        <main className="register__container">
           <p
             ref={errRef}
             // if there is an error message it show errmsg classname otherwise offscreen classname
@@ -126,7 +127,7 @@ function Register() {
             {errMsg} {/* display whatever error we have in our errRef */}
           </p>
           <h1>Register</h1>
-          <form onSubmit={handleSubmit}>
+          <form className="register__form" onSubmit={handleSubmit}>
             <label htmlFor="username">
               Username:
               <FontAwesomeIcon
@@ -272,6 +273,7 @@ function Register() {
             </p>
 
             <button
+              className="formButton"
               type="submit"
               // eslint-disable-next-line no-unneeded-ternary
               disabled={!validName || !validPwd || !validMatch ? true : false}
@@ -282,7 +284,9 @@ function Register() {
           <p>
             Already registered?
             <br />
-            <span className="line">Sign In</span>
+            <Link className="register__link" to="/login">
+              Sign In
+            </Link>
           </p>
         </main>
       )}

@@ -62,7 +62,7 @@ function Login() {
     <>
       <Title />
       {success ? (
-        <section>
+        <section className="login__success">
           <h1>You are logged in!</h1>
           <br />
           <Link to="/home">
@@ -80,8 +80,8 @@ function Login() {
           >
             {errMsg}
           </p>
-          <h1>Sign In</h1>
-          <form onSubmit={handleSubmit}>
+          <h1>Sign In:</h1>
+          <form className="login__form" onSubmit={handleSubmit}>
             <label htmlFor="userEmail">Email:</label>
             <input
               type="email"
@@ -101,17 +101,21 @@ function Login() {
               value={password}
               required
             />
-            <button type="submit">Sign In</button>
+            <button className="formButton" type="submit">
+              Sign In
+            </button>
           </form>
           <p>
             Need an Account?
             <br />
-            <span className="line">Sign Up</span>
+            <Link className="login__link" to="/register">
+              Sign Up
+            </Link>
           </p>
 
           <Link to="/">
-            <button className="login__button-return" type="submit">
-              return
+            <button className="navButtons" type="submit">
+              Return
             </button>
           </Link>
         </main>
